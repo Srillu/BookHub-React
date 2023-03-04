@@ -1,0 +1,20 @@
+.tab-btn {
+  font-family: 'Roboto';
+  color: #475569;
+  font-weight: 500;
+  font-size: 16px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* @media screen and (min-width: 992px) {
+  .tab-btn {
+    font-size: 16px;
+  }
+} */
+
+.active-tab-btn {
+  color: #0b69ff;
+}
