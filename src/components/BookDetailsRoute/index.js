@@ -35,6 +35,7 @@ class BookDetailsRoute extends Component {
   }
 
   getBookDetails = async () => {
+    console.log(this.props)
     const {match} = this.props
     const {params} = match
     const {id} = params
@@ -123,7 +124,7 @@ class BookDetailsRoute extends Component {
                     className="book-details-image"
                   />
 
-                  <div>
+                  <div className="books-s">
                     <h1 className="book-details-heading">{title}</h1>
                     <p className="book-details">{authorName}</p>
                     <div className="book-detail-content-container">
@@ -132,7 +133,7 @@ class BookDetailsRoute extends Component {
                       <p className="book-details-content">{rating}</p>
                     </div>
                     <p className="book-details">
-                      Status:
+                      Status :
                       <span className="book-details book-details-span">
                         {readStatus}
                       </span>
@@ -141,7 +142,7 @@ class BookDetailsRoute extends Component {
                 </div>
 
                 <div>
-                  <hr />
+                  <hr className="hr-line" />
                   <h1 className="book-details-about-heading">About Author</h1>
                   <p className="book-details-about-details">{aboutAuthor}</p>
                   <h1 className="book-details-about-heading">About Book</h1>

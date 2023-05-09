@@ -12,12 +12,6 @@
   background: rgba(249, 248, 248, 0.1);
 }
 
-@media screen and (max-width: 767px) {
-  .not-found-image {
-    margin-left: auto;
-  }
-}
-
 .not-found-heading {
   font-weight: 500;
   font-size: 32px;
@@ -52,4 +46,10 @@
   background-color: #0284c7;
   border-radius: 12px;
   border: 0px;
+}
+
+@media screen and (max-width: 767px) {
+  .not-found-image {
+    margin-left: auto;
+  }
 }

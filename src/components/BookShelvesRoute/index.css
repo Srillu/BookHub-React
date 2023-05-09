@@ -23,6 +23,32 @@
   justify-content: space-between;
 }
 
+.mobile-search-input-container {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .input-container {
+    display: none;
+  }
+
+  .mobile-search-input-container {
+    border: 1px solid #b6c5ff;
+    display: flex;
+    align-self: flex-start;
+    margin-bottom: 20px;
+  }
+
+  .bookshelf-bottom-container {
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    margin-left: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+
 .book-shelf-tab-container {
   list-style-type: none;
   width: 256px;
@@ -32,12 +58,22 @@
   padding-left: 0px;
 }
 
-.book-shelf-tab-Item {
-  margin-bottom: 10px;
+@media screen and (max-width: 767px) {
+  .book-shelf-tab-container {
+    list-style-type: none;
+    display: flex;
+    width: auto;
+    margin-left: 0px;
+    padding-left: 0px;
+    height: auto;
+    margin-top: 0px;
+    /* background: beige; */
+    padding-left: 0px;
+    background: transparent;
+  }
 }
 
 .bookshelf-heading {
-  margin-left: 32px;
   margin-top: 32px;
   font-weight: 600;
   font-size: 20px;
@@ -83,10 +119,26 @@
   min-height: 25vh;
   width: 100%;
   flex-wrap: wrap;
-  padding-left: 0x;
   height: 1000px;
   padding: 10px;
   overflow-y: auto;
+}
+
+@media screen and (max-width: 767px) {
+  .all-books-container {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    min-height: 25vh;
+    width: auto;
+    /* background-color: #b6c5ff; */
+    flex-wrap: wrap;
+    height: 1000px;
+    padding: 0px;
+    margin-left: 0px;
+    overflow-y: auto;
+  }
 }
 
 .no-books-container {
@@ -110,9 +162,42 @@
   color: #334155;
 }
 
+@media screen and (max-width: 767px) {
+  .no-books-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 10px;
+    margin-bottom: 0px;
+  }
+
+  .no-books-image {
+    width: 250px;
+    height: 200px;
+  }
+
+  .no-books-des {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #334155;
+  }
+}
+
 .books-loader-container {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 250px;
+}
+
+@media screen and (max-width: 767px) {
+  .books-loader-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-top: 50px;
+    margin-left: 100px;
+  }
 }

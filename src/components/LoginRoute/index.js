@@ -40,7 +40,9 @@ class LoginRoute extends Component {
     }
 
     const response = await fetch(apiUrl, options)
+    console.log(response)
     const data = await response.json()
+    console.log(data)
     if (response.ok === true) {
       this.submitOnSuccess(data.jwt_token)
     } else {
@@ -62,6 +64,11 @@ class LoginRoute extends Component {
             alt="website login"
             className="login-image"
             src="https://res.cloudinary.com/dxekjdhel/image/upload/v1677410333/Rectangle_1467_qfvvbi.png"
+          />
+          <img
+            className="logo-mobile"
+            alt="login website logo"
+            src="https://res.cloudinary.com/dxekjdhel/image/upload/v1677398141/Screenshot_2023-02-26_122633_ej00kn.png"
           />
         </div>
 

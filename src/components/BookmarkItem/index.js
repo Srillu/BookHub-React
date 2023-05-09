@@ -9,10 +9,9 @@ import './index.css'
 const BookmarkItem = props => (
   <BookmarkContext.Consumer>
     {value => {
-      const {removeBookmarkItem, bookmarkList} = value
+      const {removeBookmarkItem} = value
       const {bookmarkItemDetails} = props
       const {
-        id,
         authorName,
         coverPic,
         rating,

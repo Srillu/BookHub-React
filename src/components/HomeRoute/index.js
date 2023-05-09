@@ -27,6 +27,14 @@ const settings = {
         slidesToScroll: 1,
       },
     },
+
+    {
+      breakpoint: 767,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+      },
+    },
     {
       breakpoint: 600,
       settings: {
@@ -101,15 +109,17 @@ class HomeRoute extends Component {
     const {topRatedBooksList} = this.state
 
     return (
-      <Slider {...settings}>
+      <Slider {...settings} className="slider-cont">
         {topRatedBooksList.map(eachItem => {
           const {id, authorName, coverPic, title} = eachItem
           return (
             <Link to={`/books/${id}`} className="link-items">
               <li className="slick-item" key={id}>
                 <img className="slick-logo-image" src={coverPic} alt="title" />
-                <h1 className="slick-title">{title}</h1>
-                <p className="slick-author">{authorName}</p>
+                <div className="title-author-container">
+                  <h1 className="slick-title">{title}</h1>
+                  <p className="slick-author">{authorName}</p>
+                </div>
               </li>
             </Link>
           )
@@ -147,17 +157,18 @@ class HomeRoute extends Component {
             </Link>
           </div>
         </div>
-        <div className="slick-items-container">{this.renderSlider()}</div>
+        {this.renderBasedOnApiStatus()}
       </div>
       <Footer />
     </div>
   )
 
   renderOnFailure = () => (
-    <div>
+    <div className="failure-view">
       <img
         alt="failure view"
         src="https://res.cloudinary.com/dxekjdhel/image/upload/v1677492735/Group_7522_epcahg.png"
+        className="failure-images"
       />
       <p>Something went wrong, Please try again.</p>
       <div>
@@ -179,7 +190,7 @@ class HomeRoute extends Component {
       case apiConstants.inProgress:
         return this.renderLoader()
       case apiConstants.success:
-        return this.renderHomePage()
+        return this.renderSlider()
       case apiConstants.failure:
         return this.renderOnFailure()
       default:
@@ -189,7 +200,13 @@ class HomeRoute extends Component {
 
   renderLoader = () => (
     <div className="loader-container" testid="loader">
-      <Loader type="TailSpin" color="#0284C7" height={50} width={50} />
+      <Loader
+        type="TailSpin"
+        color="#0284C7"
+        height={50}
+        width={50}
+        className="mobile-loader"
+      />
     </div>
   )
 
@@ -197,7 +214,7 @@ class HomeRoute extends Component {
     return (
       <div className="home-container">
         <Header />
-        {this.renderBasedOnApiStatus()}
+        {this.renderHomePage()}
       </div>
     )
   }

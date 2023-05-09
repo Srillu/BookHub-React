@@ -172,17 +172,19 @@ class BookShelvesRoute extends Component {
     const {activeTabId} = this.state
     // console.log(activeTabId)
     return (
-      <ul className="book-shelf-tab-container">
+      <div>
         <h1 className="bookshelf-heading">Bookshelves</h1>
-        {bookshelvesList.map(eachItem => (
-          <TabItemRoute
-            eachItem={eachItem}
-            key={eachItem.id}
-            onClickTabItemLabel={this.onClickTabItemLabel}
-            isActive={activeTabId === eachItem.id}
-          />
-        ))}
-      </ul>
+        <ul className="book-shelf-tab-container">
+          {bookshelvesList.map(eachItem => (
+            <TabItemRoute
+              eachItem={eachItem}
+              key={eachItem.id}
+              onClickTabItemLabel={this.onClickTabItemLabel}
+              isActive={activeTabId === eachItem.id}
+            />
+          ))}
+        </ul>
+      </div>
     )
   }
 
@@ -224,14 +226,31 @@ class BookShelvesRoute extends Component {
   }
 
   render() {
+    const {searchText} = this.state
     return (
       <div className="bookshelf-main-container">
         <Header />
         <div className="bookshelf-bottom-container">
+          <div className="mobile-search-input-container">
+            <input
+              type="search"
+              className="input-box"
+              placeholder="search"
+              onChange={this.onChangeSearchInput}
+              value={searchText}
+            />
+            <button
+              type="button"
+              testid="searchButton"
+              className="search-icon-button"
+              onClick={this.onClickSearchInput}
+            >
+              <BsSearch className="search-icon" />
+            </button>
+          </div>
           {this.renderBookShelvesTabItems()}
           {this.renderDisplayBooksContainer()}
         </div>
-        {/* {this.renderOnMobileView()} */}
         <Footer />
       </div>
     )

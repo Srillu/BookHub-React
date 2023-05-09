@@ -1,5 +1,3 @@
-import {BsFillStarFill} from 'react-icons/bs'
-
 import BookmarkItem from '../BookmarkItem'
 import BookmarkContext from '../../context/BookmarkContext'
 
