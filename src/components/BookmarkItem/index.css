@@ -12,3 +12,16 @@
 .book-mark-image-container {
   display: flex;
 }
+
+@media screen and (max-width: 767px) {
+  .book-mark-item-container {
+    border: 1px solid cadetblue;
+    width: 400px;
+    border-radius: 10px;
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+  }
+}
